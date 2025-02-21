@@ -4,7 +4,7 @@ import { FaGithub, FaSquareRss } from "react-icons/fa6";
 const DesktopCopyright = () => {
   return (
     <div className="mx-auto mt-10 hidden max-w-4xl items-center justify-between lg:flex">
-      <div className="text-md flex flex-1 justify-start">
+      {/* <div className="text-md flex flex-1 justify-start">
         <a
           href="https://github.com/timtbdev/Next.js-Portfolio-App-v2"
           target="_blank"
@@ -14,9 +14,9 @@ const DesktopCopyright = () => {
           <FaGithub size={18} />
           Source code
         </a>
-      </div>
-      <span className="text-md text-center leading-5 text-gray-600 dark:text-zinc-400">
-        © {new Date().getFullYear()} All rights reserved.
+      </div> */}
+      <span className="text-center text-sm leading-5 text-gray-600 dark:text-zinc-400">
+        © {new Date().getFullYear()} Pantaleone.net. All rights reserved.
       </span>
       <div className="flex flex-1 justify-end">
         <a
@@ -24,7 +24,7 @@ const DesktopCopyright = () => {
           className="text-md dark:text-brand-400 inline-flex items-center gap-1.5 text-orange-600 hover:text-blue-600 dark:hover:text-white"
         >
           <FaSquareRss size={18} />
-          RSS Feed
+          RSS
         </a>
       </div>
     </div>

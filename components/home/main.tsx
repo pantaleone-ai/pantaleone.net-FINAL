@@ -32,12 +32,12 @@ const Profile = () => {
         <Badge status={data.status} />
         <Title title={data.title} />
         <MDXRemote source={content} components={components} />
-        <SelectedProjectsButton
+        {/* <SelectedProjectsButton
           title="Selected Projects"
           scrollTo="#selected-projects"
           className="mt-4"
         />
-        <HandDrawnArrowToBottom className="mx-auto mb-4 mt-8 size-20 -rotate-12 text-center text-gray-300 dark:text-zinc-600" />
+        <HandDrawnArrowToBottom className="mx-auto mb-4 mt-8 size-20 -rotate-12 text-center text-gray-300 dark:text-zinc-600" /> */}
       </div>
     </div>
   );
