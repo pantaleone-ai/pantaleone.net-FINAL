@@ -16,7 +16,7 @@ export default async function AboutPage() {
   return (
     <Fragment>
       <Card className="pb-2">
-        <div className="shrink-0">
+        {/* <div className="shrink-0">
           <Image
             alt="Cover Image"
             src={data.image}
@@ -26,7 +26,7 @@ export default async function AboutPage() {
             quality={100}
             className="h-128 w-full object-cover lg:rounded-t-[0.62rem]"
           />
-        </div>
+        </div> */}
         <div className="relative mx-auto flex max-w-3xl flex-col text-pretty px-8 pb-6 pt-4 sm:px-14">
           <div className="flex items-center justify-start">
             <h1 className="text-3xl font-semibold tracking-tight text-gray-800 dark:text-white/90">
