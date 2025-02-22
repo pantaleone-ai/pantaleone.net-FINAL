@@ -1,9 +1,9 @@
 import { getPageBySlug } from "@/lib/mdx";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import HandDrawnArrowToBottom from "../ui/hand-drawn-arrow-to-bottom";
-import Avatar from "./avatar";
+// import HandDrawnArrowToBottom from "../ui/hand-drawn-arrow-to-bottom";
+// import Avatar from "./avatar";
 import Badge from "./badge";
-import SelectedProjectsButton from "./selected-projects-button";
+// import SelectedProjectsButton from "./selected-projects-button";
 import Title from "./title";
 
 // Custom components for MDXRemote.
@@ -28,7 +28,7 @@ const Profile = () => {
   return (
     <div id="heading" className="px-6 pt-4 lg:px-8">
       <div className="mx-auto max-w-2xl text-center">
-        <Avatar image={data.imageUrl} initials={data.initials} />
+        {/* <Avatar image={data.imageUrl} initials={data.initials} /> */}
         <Badge status={data.status} />
         <Title title={data.title} />
         <MDXRemote source={content} components={components} />

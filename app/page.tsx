@@ -1,13 +1,12 @@
 import Profile from "@/components/home/main";
 import ProjectItem from "@/components/project/main";
-import HandDrawnArrow from "@/components/ui/hand-drawn-arrow";
 import { getAllProjectsFilteredByOrder } from "@/lib/mdx";
 import { ProjectType } from "@/types";
 import { Metadata } from "next";
 import React, { Fragment } from "react";
 
 export const metadata: Metadata = {
-  title: "Tim | Home",
+  title: "Pantaleone.net | Home",
 };
 
 export default async function HomePage() {
@@ -22,7 +21,7 @@ export default async function HomePage() {
           <Fragment key={index}>
             <ProjectItem project={project} />
             {projects.length !== index + 1 && (
-              <HandDrawnArrow className="mx-auto my-6 size-20 text-center text-gray-300 dark:text-zinc-600" />
+              <div className="mx-auto my-6 size-10 text-center text-gray-300 dark:text-zinc-600" />
             )}
           </Fragment>
         ))}
