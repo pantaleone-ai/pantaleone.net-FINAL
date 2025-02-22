@@ -71,12 +71,12 @@ const Screenshots: FC<Props> = ({ screenshots = [], className }) => {
   );
 
   return (
-    <div className={cn("relative w-full", className)}>
+    <div className={cn("relative pr-40 pl-40 items-center", className)}>
       <Carousel setApi={setApi}>
         <CarouselContent>
           {screenshots.map((image, index) => (
             <CarouselItem key={index}>
-              {renderImage(image, index, 20 / 14)}
+              {renderImage(image, index, 8 / 16)}
             </CarouselItem>
           ))}
         </CarouselContent>

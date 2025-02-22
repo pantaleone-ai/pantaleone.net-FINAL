@@ -61,7 +61,7 @@ const ProjectItem: FC<Props> = ({ project }) => (
         </div>
       )} */}
     </div>
-    <Screenshots className="mt-6" screenshots={project.data.screenshots} />
+    <Screenshots className="mt-4" screenshots={project.data.screenshots} />
   </Card>
 );
 
