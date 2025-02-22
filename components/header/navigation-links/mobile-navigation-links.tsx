@@ -25,7 +25,7 @@ const MobileNavigationLinks: FC<Props> = ({ currentPath }) => {
       {({ open, close }) => (
         <>
           <PopoverButton
-            className="transiton group relative inset-px z-10 inline-flex rounded-md bg-transparent p-2 focus:outline-none"
+            className="transiton group relative inset-px z-10 inline-flex rounded-md bg-transparent p-2 focus:outline-none "
             aria-label="Toggle site navigation"
           >
             <div className="flex h-6 w-6 items-center justify-center text-gray-600 dark:text-zinc-400">
@@ -73,7 +73,7 @@ const MobileNavigationLinks: FC<Props> = ({ currentPath }) => {
                   exit={{
                     opacity: 0,
                     y: -32,
-                    transition: { duration: 0.2 },
+                    transition: { duration: 0.1 },
                   }}
                   className="absolute inset-x-0 top-0 z-0 origin-top rounded-b-2xl bg-zinc-50 px-6 pb-10 pt-20 shadow-2xl shadow-zinc-800/5 dark:bg-zinc-900"
                 >
@@ -129,7 +129,7 @@ const MobileNavigationLinks: FC<Props> = ({ currentPath }) => {
                           >
                             <menuItem.icon
                               aria-hidden="true"
-                              className="text-gray-600 dark:text-zinc-400"
+                              className="text-gray-400 dark:text-zinc-400"
                             />
                             {menuItem.title}
                           </CloseButton>

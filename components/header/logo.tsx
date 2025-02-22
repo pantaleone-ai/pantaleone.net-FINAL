@@ -5,9 +5,9 @@ const Logo = () => {
   return (
     <Link href="/" className="group mr-4 hidden items-center lg:flex">
       <div className="flex h-7 w-6 items-center justify-center rounded border border-white bg-transparent">
-        <span className="text-xl font-bold text-white">P</span>
+        <span className="text-xl font-bold text-brand-50">P</span>
       </div>
-      <span aria-label="logo" className="ml-2">
+      <span aria-label="logo" className=".text-brand-50 ml-2">
         pantaleone
       </span>
     </Link>
