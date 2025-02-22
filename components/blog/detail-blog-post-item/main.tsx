@@ -34,7 +34,7 @@ const BlogPostDetail: FC<Props> = ({ post }) => {
         <div className="w-full px-6 py-1 sm:px-8">
           <Title title={title} detail={true} />
           <Separator orientation="horizontal" className="my-2" />
-          <Tags tags={tags} detail={true} />
+          <Tags className="text-sm" tags={tags} detail={true} />
           <Separator orientation="horizontal" className="my-2" />
           <InfoBarDetailDesktop
             authorImage={authorAvatar}
