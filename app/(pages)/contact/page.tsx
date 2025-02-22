@@ -9,7 +9,7 @@ import { socialConfigs } from "@/config/social";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Tim | Contact",
+  title: "Pantaleone.net | Contact Us",
 };
 
 export default async function ContactPage() {

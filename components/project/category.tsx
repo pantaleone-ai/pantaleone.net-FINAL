@@ -3,7 +3,7 @@ import HtmlIcon from "@/icons/pages/projects/html-icon";
 import NextJsIcon from "@/icons/pages/projects/nextjs-icon";
 import { cn } from "@/utils/helpers";
 import { FC } from "react";
-import HandDrawnFullCirlce from "../ui/hand-drawn-full-circle";
+// import HandDrawnFullCirlce from "../ui/hand-drawn-full-circle";
 
 interface Props {
   category: string;
@@ -31,7 +31,7 @@ const Category: FC<Props> = ({ category, className }) => {
     >
       {renderIcon()}
       {category}
-      <HandDrawnFullCirlce className="absolute -top-3 mx-auto h-[70px] w-auto items-center text-gray-200 dark:text-zinc-600" />
+      {/* <HandDrawnFullCirlce className="absolute -top-3 mx-auto h-[70px] w-auto items-center text-gray-200 dark:text-zinc-600" /> */}
     </div>
   );
 };

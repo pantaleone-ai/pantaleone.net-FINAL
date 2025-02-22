@@ -4,7 +4,7 @@ import { SubMenuType } from "@/types";
 const categories: SubMenuType[] = [
   {
     id: 1,
-    title: "All Posts",
+    title: "All Blog Posts",
     slug: "/blog",
     icon: CategoryIcon,
     description: "All blog posts.",

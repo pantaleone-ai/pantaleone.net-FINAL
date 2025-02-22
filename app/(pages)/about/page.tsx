@@ -7,7 +7,7 @@ import Image from "next/image";
 import { Fragment } from "react";
 
 export const metadata: Metadata = {
-  title: "Tim | About",
+  title: "Pantaleone.net | About Us",
 };
 
 export default async function AboutPage() {

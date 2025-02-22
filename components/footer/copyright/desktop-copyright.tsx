@@ -21,7 +21,7 @@ const DesktopCopyright = () => {
       <div className="flex flex-1 justify-end">
         <a
           href={getUrl("/rss.xml")}
-          className="text-md dark:text-brand-400 inline-flex items-center gap-1.5 text-orange-600 hover:text-blue-600 dark:hover:text-white"
+          className="text-md dark:text-brand-400 inline-flex items-center gap-1.5 dark:text-gray-400 hover:text-gray-200 dark:hover:text-gray-200"
         >
           <FaSquareRss size={18} />
           RSS

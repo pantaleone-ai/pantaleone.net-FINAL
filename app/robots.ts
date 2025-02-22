@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: ["/"],
       disallow: ["/search?q=", "/admin/"],
     },
-    sitemap: ["https://timtb.dev/sitemap.xml"],
+    sitemap: ["https://pantaleone.net/sitemap.xml"],
   };
 }

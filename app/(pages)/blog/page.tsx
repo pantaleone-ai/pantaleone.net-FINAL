@@ -4,7 +4,7 @@ import { PostType } from "@/types";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Tim | Blog",
+  title: "Pantaleone.net | AI, Tech & Automation Blog",
 };
 
 export async function generateStaticParams() {
