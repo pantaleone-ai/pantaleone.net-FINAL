@@ -71,7 +71,7 @@ const Screenshots: FC<Props> = ({ screenshots = [], className }) => {
   );
 
   return (
-    <div className={cn("relative pr-20 pl-20 items-center", className)}>
+    <div className={cn("relative pr-20 pl-20 items-center justify-center", className)}>
       <Carousel setApi={setApi}>
         <CarouselContent>
           {screenshots.map((image, index) => (
@@ -84,11 +84,11 @@ const Screenshots: FC<Props> = ({ screenshots = [], className }) => {
         <CarouselNext className="absolute right-4 top-1/2 hidden size-10 sm:flex" />
       </Carousel>
       {numberOfSlides > 1 && (
-        <div className="absolute bottom-1 mx-auto w-full items-center text-center sm:bottom-5">
+        <div className="absolute bottom-1 mx-auto w-3/5 items-center justify-center text-center sm:bottom-5">
           {Array.from({ length: numberOfSlides }, (_, i) => (
             <Button
               key={i}
-              className={`mx-1 mt-5 h-1.5 w-1.5 rounded-full p-0 ${
+              className={`mx-1 mt-5 h-1.5 w-1.5 rounded-full p-1 items-center text-center ${
                 i === currentSlide
                   ? "scale-125 transform bg-gray-800 dark:bg-white"
                   : "bg-white dark:bg-zinc-900"

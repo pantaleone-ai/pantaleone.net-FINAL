@@ -7,8 +7,8 @@ export async function GET() {
   const posts = getAllPostsOrderedByDate();
 
   const feed = new Feed({
-    title: "Tim's Blog's RSS Feed",
-    description: "Latest blog posts from Tim",
+    title: "Pantaleone.net AI & Automation Blog's RSS Feed",
+    description: "Latest blog posts from Pantaleone.net",
     id: getUrl(),
     link: getUrl(),
     language: "en",

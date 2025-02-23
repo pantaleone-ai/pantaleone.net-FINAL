@@ -168,8 +168,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: seoConfig.twitterImage,
-        width: 1200,
-        height: 675,
+        width: 512,
+        height: 512,
         alt: seoConfig.title,
       },
     ],

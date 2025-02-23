@@ -10,7 +10,19 @@ const nextConfig = {
   darkMode: 'class',
   defaultTheme: 'dark',
     images: {
-    domains: ['pantaleone-net.s3.us-west-1.amazonaws.com']
+      remotePatterns: [
+        {
+          protocol: 'https',
+          hostname: 'pantaleone-net.s3.us-west-1.amazonaws.com',
+          port: '',
+          pathname: '/**',
+        },
+      ],
+      localPatterns: [
+      {
+        pathname: '/images/**',
+      },
+    ],
   }
 };
 

@@ -27,7 +27,7 @@ const menuConfig: MenuType[] = [
     title: "Blog",
     slug: "/blog",
     icon: BlogIcon,
-    subMenu: categories,
+    // subMenu: categories,
   },
   {
     id: 3,
