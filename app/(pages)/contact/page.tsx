@@ -14,10 +14,10 @@ export const metadata: Metadata = {
 
 export default async function ContactPage() {
   const title = "Contact";
-  const description = "Please feel free to reach out to me.";
-  const imageUrl = "/images/logo.png";
+  const description = "Please feel free to reach out";
+  const imageUrl = "favicons/android-chrome-192x192.png";
   const imageAlt = "Avatar";
-  const initials = "TB";
+  const initials = "MP";
   return (
     <Card>
       <div className="mx-auto py-6 sm:py-8">

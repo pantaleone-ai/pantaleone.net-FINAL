@@ -15,12 +15,7 @@ const menuConfig: MenuType[] = [
     slug: "/",
     icon: HomeIcon,
   },
-  {
-    id: 2,
-    title: "About",
-    slug: "/about",
-    icon: AboutIcon,
-  },
+
   // {
   //   id: 3,
   //   title: "Projects",
@@ -28,12 +23,20 @@ const menuConfig: MenuType[] = [
   //   icon: ProjectIcon,
   // },
   {
-    id: 3,
+    id: 2,
     title: "Blog",
     slug: "/blog",
     icon: BlogIcon,
     subMenu: categories,
   },
+  {
+    id: 3,
+    title: "About",
+    slug: "/about",
+    icon: AboutIcon,
+  
+  },
+
   {
     id: 4,
     title: "Contact",
