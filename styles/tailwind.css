@@ -69,6 +69,9 @@
   body {
     @apply bg-background text-foreground;
   }
+  h1 {
+    @apply text-pretty text-lg text-gray-600 dark:text-zinc-400 sm:text-xl/8;
+  }
   h4 {
     @apply text-pretty text-lg font-medium text-gray-600 dark:text-zinc-400 sm:text-xl/8;
   }
@@ -76,7 +79,10 @@
     @apply text-base/7 font-semibold text-gray-600 dark:text-zinc-400 sm:text-lg;
   }
   p {
-    @apply text-base/7 text-gray-600 dark:text-zinc-400;
+    @apply text-base/7 text-gray-600;
+  }
+  ul li {
+    @apply text-gray-400;
   }
   span {
     @apply text-base/7 text-gray-600 dark:text-zinc-400;
