@@ -124,12 +124,145 @@ noLoop();
 
 **Three.js:  Wait, 3D on the Web?**
 
-Yes, and it's great. **Three.js** is another JavaScript library, but this one lets you create 3D graphics in your web browser.
+Yes, and it's great. **Three.js** is another JavaScript library, but this one lets you create 3D graphics in your web browser.  Below is some example HTML code that can be used with the threejs editor.  Check it out!
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Three.js Abstract Art</title>
+    <style>
+        body { margin: 0; overflow: hidden; }
+        canvas { display: block; }
+    </style>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script>
+        // Scene setup
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        // Lighting
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+        scene.add(ambientLight);
+        const pointLight = new THREE.PointLight(0xffffff, 1);
+        pointLight.position.set(50, 50, 50);
+        scene.add(pointLight);
+
+        // Cubes array
+        const cubes = [];
+        const cubeCount = 20;
+        
+        // Create colorful cubes
+        for (let i = 0; i < cubeCount; i++) {
+            const geometry = new THREE.BoxGeometry(1, 1, 1);
+            const material = new THREE.MeshPhongMaterial({
+                color: new THREE.Color(Math.random(), Math.random(), Math.random()),
+                shininess: 100
+            });
+            const cube = new THREE.Mesh(geometry, material);
+            
+            // Random position
+            cube.position.set(
+                (Math.random() - 0.5) * 50,
+                (Math.random() - 0.5) * 50,
+                (Math.random() - 0.5) * 50
+            );
+            
+            // Random rotation speed
+            cube.rotationSpeed = {
+                x: Math.random() * 0.05,
+                y: Math.random() * 0.05,
+                z: Math.random() * 0.05
+            };
+            
+            scene.add(cube);
+            cubes.push(cube);
+        }
+
+        // Particle system
+        const particleCount = 200;
+        const particles = new THREE.BufferGeometry();
+        const positions = new Float32Array(particleCount * 3);
+        const colors = new Float32Array(particleCount * 3);
+
+        for (let i = 0; i < particleCount * 3; i += 3) {
+            positions[i] = (Math.random() - 0.5) * 100;
+            positions[i + 1] = (Math.random() - 0.5) * 100;
+            positions[i + 2] = (Math.random() - 0.5) * 100;
+            
+            colors[i] = Math.random();
+            colors[i + 1] = Math.random();
+            colors[i + 2] = Math.random();
+        }
+
+        particles.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+        particles.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+        const particleMaterial = new THREE.PointsMaterial({
+            size: 0.5,
+            vertexColors: true,
+            transparent: true,
+            opacity: 0.8
+        });
+
+        const particleSystem = new THREE.Points(particles, particleMaterial);
+        scene.add(particleSystem);
+
+        // Camera position
+        camera.position.z = 50;
+
+        // Animation
+        function animate() {
+            requestAnimationFrame(animate);
+
+            // Animate cubes
+            cubes.forEach(cube => {
+                cube.rotation.x += cube.rotationSpeed.x;
+                cube.rotation.y += cube.rotationSpeed.y;
+                cube.rotation.z += cube.rotationSpeed.z;
+                
+                // Gentle floating motion
+                cube.position.y += Math.sin(Date.now() * 0.001 + cube.position.x) * 0.01;
+            });
+
+            // Animate particles
+            particleSystem.rotation.y += 0.001;
+            
+            // Color shifting
+            const time = Date.now() * 0.0005;
+            cubes.forEach(cube => {
+                cube.material.color.setHSL(
+                    (Math.sin(time + cube.position.x) + 1) / 2,
+                    0.8,
+                    0.5
+                );
+            });
+
+            renderer.render(scene, camera);
+        }
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        // Start animation
+        animate();
+    </script>
+</body>
+</html>
+```
+![3js output 1](/images/posts/p53js/3js.png) 
 
 **Play with the threejs editor here!** [https://threejs.org/editor/](https://threejs.org/editor/)
 
-![p5js output 1](https://pantaleone-net.s3.us-west-1.amazonaws.com/blog-images/p5js2.png)
-
-![p5js output 1](https://pantaleone-net.s3.us-west-1.amazonaws.com/blog-images/p5js3.png)
+![p5js output 2](https://pantaleone-net.s3.us-west-1.amazonaws.com/blog-images/p5js2.png)
 
 **Happy Hacking!**

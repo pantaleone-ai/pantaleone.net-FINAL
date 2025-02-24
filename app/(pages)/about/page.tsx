@@ -4,6 +4,8 @@ import { getPageBySlug } from "@/lib/mdx";
 import { Metadata } from "next";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Image from "next/image";
+import SocialAccountButton from "@/components/contact/social-account-button";
+import { socialConfigs } from "@/config/social";
 import { Fragment } from "react";
 
 export const metadata: Metadata = {
@@ -35,7 +37,20 @@ export default async function AboutPage() {
           </div>
           <article id="about-me" className="mt-2">
             <MDXRemote source={content} components={mdxComponents} />
+            
           </article>
+          <article id="contact" className="mt-10 grid grid-cols-1">
+          <h1 className="text-2xl font-semibold tracking-tight text-gray-800 dark:text-white/90">
+              Give us a shout
+            </h1>
+          <ul role="list" className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
+          {socialConfigs.map((item, index) => (
+            <li key={index}>
+              <SocialAccountButton social={item} />
+            </li>
+          ))}
+        </ul>
+        </article>
         </div>
       </Card>
     </Fragment>
