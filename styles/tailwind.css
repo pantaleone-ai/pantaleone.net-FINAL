@@ -79,7 +79,7 @@
     @apply text-base/7 font-semibold text-gray-600 dark:text-zinc-400 sm:text-lg;
   }
   p {
-    @apply text-base/7 text-gray-600;
+    @apply text-base/7 text-gray-200;
   }
   ul li {
     @apply text-gray-400;

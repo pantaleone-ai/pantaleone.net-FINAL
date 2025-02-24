@@ -15,7 +15,7 @@ const Header = () => {
         aria-label="Navigation"
         className="mx-auto flex max-w-4xl items-center px-2 py-2.5"
       >
-        <div className="z-10 flex flex-1 justify-start">
+        <div className="z-10 flex flex-1 justify-start text-brand-300">
           <Logo />
         </div>
         <DesktopNavigationLinks currentPath={currentPath} />
