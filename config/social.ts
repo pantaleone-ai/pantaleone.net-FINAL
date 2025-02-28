@@ -38,12 +38,12 @@ export const socialConfigs: SocialType[] = [
     href: "https://www.linkedin.com/in/mattpantaleone/",
     icon: FaLinkedin,
   },
-  {
-    id: 5,
-    name: "Facebook",
-    username: "pantaleoneNFTs",
-    tooltip: "Connect with me on Facebook",
-    href: "https://www.facebook.com/pantaleoneNFTs",
-    icon: FaFacebook,
-  },
+  // {
+  //   id: 5,
+  //   name: "Facebook",
+  //   username: "pantaleoneNFTs",
+  //   tooltip: "Connect with me on Facebook",
+  //   href: "https://www.facebook.com/pantaleoneNFTs",
+  //   icon: FaFacebook,
+  // },
 ];
