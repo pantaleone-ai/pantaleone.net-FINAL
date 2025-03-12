@@ -39,6 +39,31 @@ const nextConfig = {
         destination: '/',
         permanent: true,
       },
+      {
+        source: '/shot-on/:path*',        // Using path parameters
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/digital-asset-nft-tag/:path*',        // Using path parameters
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/wp-content/:path*',        // Using path parameters
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/grid/:path*',        // Using path parameters
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/feed/:path*',        // Using path parameters
+        destination: 'https://www.pantaleone.net/rss.xml',
+        permanent: true,
+      },
       // Add more redirect rules as needed
     ]
   },
