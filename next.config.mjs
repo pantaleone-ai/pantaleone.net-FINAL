@@ -64,6 +64,11 @@ const nextConfig = {
         destination: 'https://www.pantaleone.net/rss.xml',
         permanent: true,
       },
+      {
+        source: '/sets/:path*',        // Using path parameters
+        destination: '/',
+        permanent: true,
+      },
       // Add more redirect rules as needed
     ]
   },

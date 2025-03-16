@@ -4,7 +4,7 @@ import { getAllProjectsFilteredByOrder } from "@/lib/mdx";
 import { ProjectType } from "@/types";
 import { Metadata } from "next";
 import React, { Fragment } from "react";
-import NewsletterForm from '../components/home/optin-form';
+// import NewsletterForm from '../components/home/optin-form';
 
 export const metadata: Metadata = {
   title: "Pantaleone.net | Home",
@@ -17,7 +17,7 @@ export default async function HomePage() {
   return (
     <Fragment>
       <Profile />
-       <NewsletterForm />
+       {/* <NewsletterForm /> */}
       <section id="selected-projects" className="relative mb-10 mt-10">
         {projects.map((project, index) => (
           <Fragment key={index}>

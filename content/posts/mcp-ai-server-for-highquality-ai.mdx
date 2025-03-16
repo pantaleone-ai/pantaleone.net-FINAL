@@ -1,0 +1,111 @@
+---
+title: "Building an MCP Server: Extending AI Capabilities with the Model Context Protocol (MCP)"
+description: "Learn how to create an MCP server to securely connect AI systems like Claude, Gemini, OpenAI, and others to external data and tools in the right way"
+image: "https://pantaleone-net.s3.us-west-1.amazonaws.com/blog-images/mcp-ai-server1.jpg"
+author: "Matt Pantaleone"
+authorAvatar: "/images/avatar.jpg"
+date: "2025-03-15"
+category: "AI Development"
+tags: [
+  "MCP server",
+  "Model Context Protocol",
+  "AI integration",
+  "Python SDK",
+  "AI tools",
+  "AI Agent MCP Tools"
+]
+seo: [
+  "MCP server",
+  "Custom MCP",
+  "MCP tools",
+  "ai agent MCP",
+  "Model Context Protocol",
+  "AI secure connection",
+  "Python SDK for AI",
+  "AI external tools",
+  "AI data access",
+  "AI server setup",
+  "Claude integration",
+  "AI development",
+  "secure AI systems"
+]
+---
+
+# Building an MCP Server: Unlocking AI Model Quality with the Model Context Protocol
+
+## Key Points
+- An MCP server implements *Anthropic’s Model Context Protocol*, enabling secure connections between AI systems like Claude or Gemini and external resources or tools.
+- Using the Python SDK, you can create one to manage tasks like file access or data operations, with a simple setup process.
+- A practical example is a file system server, allowing AI to list, read, and write files within a secure directory.
+- Security is paramount, with built-in measures to restrict access and protect data, balancing functionality with safety.
+
+## Introduction
+*Imagine giving AI a secure bridge to the outside world.* That’s what an MCP server does. Short for Model Context Protocol, it’s a specialized tool format based on an open standard by Anthropic, designed to let AI systems interact with external data and tools safely. Whether it’s reading files, querying databases, or performing actions, MCP servers extend AI capabilities beyond their built-in knowledge. In this post, we’ll explore what makes MCP servers tick, how to build one with the Python SDK, and why they’re a game-changer for AI development—all with a hands-on example to bring it to life.
+
+## What is an MCP Server?
+An MCP server follows the *Model Context Protocol (MCP)*, a JSON-RPC 2.0-based standard that Anthropic introduced to connect AI models to external systems securely. Think of it as a middleman: the AI (client) talks to the server, which handles tasks like fetching data (resources) or executing actions (tools). Introduced in late 2024, MCP uses modern transports like HTTP/2 or websockets for real-time communication, making it versatile for everything from local testing to enterprise use.
+
+---
+
+# The Most Interesting Aspects of MCP Servers
+
+## 1. Core Functionality: Resources and Tools
+MCP servers shine by offering two main capabilities:
+
+- *Resources*: These are for retrieving data—like listing files in a directory or reading a document. They’re read-only by design, ensuring no unintended changes.
+- *Tools*: These handle actions with side effects, such as writing to a file or sending an API request. They give AI the power to *do* things, not just *know* things.
+
+*Why It’s Interesting*: This split lets developers fine-tune what an AI can access versus what it can modify, creating a controlled yet powerful extension of its abilities.
+
+## 2. Security First: Keeping It Safe
+Security isn’t an afterthought—it’s baked into MCP:
+
+- *Path Restrictions*: For file operations, you can lock access to a specific directory (e.g., /home/user/docs), preventing unauthorized snooping.
+- *Handshake Process*: The AI and server negotiate capabilities upfront, so both know what’s allowed.
+- *Consent and Authorization*: The protocol emphasizes user control, ensuring sensitive operations need approval.
+
+*Why It’s Interesting*: In an era of data breaches, this focus on security makes MCP servers a trustworthy way to expand AI without risking chaos.
+
+## 3. Easy Setup with Python SDK
+The official Python SDK simplifies creation:
+
+- Install with pip install mcp.
+- Define resources and tools using decorators like @mcp.resource and @mcp.tool.
+- Test locally with mcp dev or deploy with mcp install for Claude integration.
+
+*Why It’s Interesting*: You don’t need to be a server guru. The SDK’s straightforward approach democratizes MCP server development for coders of all levels.
+
+## 4. Practical Power: A File System Example
+Here’s a real-world MCP server that lets AI manage files in "/home/user/documents":
+
+```python
+from mcp.server.fastmcp import FastMCP
+import os
+
+BASE_PATH = "/home/user/documents"
+mcp = FastMCP("FileSystemServer")
+
+@mcp.resource("file://{path}/")
+def list_files(path: str) -> list[str]:
+    full_path = os.path.join(BASE_PATH, path)
+    if not full_path.startswith(BASE_PATH):
+        raise ValueError("Path not allowed")
+    return [f for f in os.listdir(full_path) if os.path.isfile(os.path.join(full_path, f))]
+
+@mcp.resource("file://{path}")
+def read_file(path: str) -> str:
+    full_path = os.path.join(BASE_PATH, path)
+    if not full_path.startswith(BASE_PATH):
+        raise ValueError("Path not allowed")
+    with open(full_path, "r") as f:
+        return f.read()
+
+@mcp.tool()
+def write_file(path: str, content: str) -> None:
+    full_path = os.path.join(BASE_PATH, path)
+    if not full_path.startswith(BASE_PATH):
+        raise ValueError("Path not allowed")
+    with open(full_path, "w") as f:
+        f.write(content)
+```
+![its like a server, connectivity and logic in your living room](https://pantaleone-net.s3.us-west-1.amazonaws.com/blog-images/mcp-ai-server2.jpg "MCP AI Server")
